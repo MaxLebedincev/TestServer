@@ -6,162 +6,461 @@
 	},
 	"item": [
 		{
-			"name": "https://localhost:44391/register",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n  \"login\": \"ADMIN\",\r\n  \"email\": \"admin@gmail.com\",\r\n  \"role\": \"admin\",\r\n  \"password\": \"12345\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "https://localhost:44391/register",
-					"protocol": "https",
-					"host": [
-						"localhost"
-					],
-					"port": "44391",
-					"path": [
-						"register"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "https://localhost:44391/token",
-			"request": {
-				"auth": {
-					"type": "noauth"
-				},
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n  \"login\": \"Alexandr\",\r\n  \"password\": \"1\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "https://localhost:44391/token",
-					"protocol": "https",
-					"host": [
-						"localhost"
-					],
-					"port": "44391",
-					"path": [
-						"token"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "https://localhost:44391/api/values/getlogin",
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
+			"name": "Авторизированный",
+			"item": [
+				{
+					"name": "Админ",
+					"item": [
 						{
-							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiQWxleGFuZHIiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJzdHVkZW50IiwibmJmIjoxNjUzMzg1MjkzLCJleHAiOjE2NTMzODUzNTMsImlzcyI6Ik15QXV0aFNlcnZlciIsImF1ZCI6Imh0dHA6Ly9sb2NhbGhvc3Q6MzAwMCJ9.PR94ls-q6HKTrxtzRxZC8T2LwhFEAro1Ul2ihT0-4KM",
-							"type": "string"
+							"name": "Тест (Получение роли)",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiQWxleGFuZHIiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJzdHVkZW50IiwibmJmIjoxNjUzMzg1MjkzLCJleHAiOjE2NTMzODUzNTMsImlzcyI6Ik15QXV0aFNlcnZlciIsImF1ZCI6Imh0dHA6Ly9sb2NhbGhvc3Q6MzAwMCJ9.PR94ls-q6HKTrxtzRxZC8T2LwhFEAro1Ul2ihT0-4KM",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://localhost:44391/api/values/getrole",
+									"protocol": "https",
+									"host": [
+										"localhost"
+									],
+									"port": "44391",
+									"path": [
+										"api",
+										"values",
+										"getrole"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Получение всех юзеров",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiQWxleGFuZHIiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJzdHVkZW50IiwibmJmIjoxNjU0OTM2ODkzLCJleHAiOjE2NTQ5Mzc3OTMsImlzcyI6Ik15QXV0aFNlcnZlciIsImF1ZCI6Imh0dHA6Ly9sb2NhbGhvc3Q6MzAwMCJ9.V7C0FNoJLGBRD2JXt-4SguGXTzExvQezWtudmvCeeVM",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://localhost:44391/api/user/getAllUser",
+									"protocol": "https",
+									"host": [
+										"localhost"
+									],
+									"port": "44391",
+									"path": [
+										"api",
+										"user",
+										"getAllUser"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Удаление юзера",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiQWxleGFuZHIiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJzdHVkZW50IiwibmJmIjoxNjU0OTM2ODkzLCJleHAiOjE2NTQ5Mzc3OTMsImlzcyI6Ik15QXV0aFNlcnZlciIsImF1ZCI6Imh0dHA6Ly9sb2NhbGhvc3Q6MzAwMCJ9.V7C0FNoJLGBRD2JXt-4SguGXTzExvQezWtudmvCeeVM",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": 1,\r\n    \"role\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://localhost:44391/api/user/deleteUser",
+									"protocol": "https",
+									"host": [
+										"localhost"
+									],
+									"port": "44391",
+									"path": [
+										"api",
+										"user",
+										"deleteUser"
+									]
+								}
+							},
+							"response": []
 						}
 					]
 				},
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "https://localhost:44391/api/values/getlogin",
-					"protocol": "https",
-					"host": [
-						"localhost"
-					],
-					"port": "44391",
-					"path": [
-						"api",
-						"values",
-						"getlogin"
+				{
+					"name": "Студент",
+					"item": [
+						{
+							"name": "Выбрать курс",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiQWxleGFuZHIiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJzdHVkZW50IiwibmJmIjoxNjU0OTM2ODkzLCJleHAiOjE2NTQ5Mzc3OTMsImlzcyI6Ik15QXV0aFNlcnZlciIsImF1ZCI6Imh0dHA6Ly9sb2NhbGhvc3Q6MzAwMCJ9.V7C0FNoJLGBRD2JXt-4SguGXTzExvQezWtudmvCeeVM",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id_course\": 1,\r\n    \"id_student\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://localhost:44391/api/user/setCourse",
+									"protocol": "https",
+									"host": [
+										"localhost"
+									],
+									"port": "44391",
+									"path": [
+										"api",
+										"user",
+										"setCourse"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Удалить курс",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiTmlrYUxlbmluYSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6InRlYWNoZXIiLCJuYmYiOjE2NTQ5ODAyNjAsImV4cCI6MTY1NDk4MTE2MCwiaXNzIjoiTXlBdXRoU2VydmVyIiwiYXVkIjoiaHR0cDovL2xvY2FsaG9zdDozMDAwIn0.PGNx-aJDfnSZwMRgg0IlgQDuIpnCdbObc3a_DlV-A0g",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id_course\": 1,\r\n    \"id_student\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://localhost:44391/api/user/deleteCourse",
+									"protocol": "https",
+									"host": [
+										"localhost"
+									],
+									"port": "44391",
+									"path": [
+										"api",
+										"user",
+										"deleteCourse"
+									]
+								}
+							},
+							"response": []
+						}
 					]
+				},
+				{
+					"name": "Учитель",
+					"item": [
+						{
+							"name": "Удалить курс",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiTmlrYUxlbmluYSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6InRlYWNoZXIiLCJuYmYiOjE2NTQ5ODAyNjAsImV4cCI6MTY1NDk4MTE2MCwiaXNzIjoiTXlBdXRoU2VydmVyIiwiYXVkIjoiaHR0cDovL2xvY2FsaG9zdDozMDAwIn0.PGNx-aJDfnSZwMRgg0IlgQDuIpnCdbObc3a_DlV-A0g",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": 1,\r\n    \"id_author\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://localhost:44391/api/user/deleteCourseЕeacher",
+									"protocol": "https",
+									"host": [
+										"localhost"
+									],
+									"port": "44391",
+									"path": [
+										"api",
+										"user",
+										"deleteCourseЕeacher"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Добавить курс",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiTmlrYUxlbmluYSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6InRlYWNoZXIiLCJuYmYiOjE2NTQ5ODAyNjAsImV4cCI6MTY1NDk4MTE2MCwiaXNzIjoiTXlBdXRoU2VydmVyIiwiYXVkIjoiaHR0cDovL2xvY2FsaG9zdDozMDAwIn0.PGNx-aJDfnSZwMRgg0IlgQDuIpnCdbObc3a_DlV-A0g",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": 1,\r\n    \"id_author\": 1,\r\n    \"name\": \"Курс по JavaScript\",\r\n    \"description\": \"Курс по профессиональному JavaScript для начинающих разработчиков, цель которого – научить думать на JavaScript, писать просто, быстро и красиво, создавать интерфейсные компоненты.\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://localhost:44391/api/user/insertCourseЕeacher",
+									"protocol": "https",
+									"host": [
+										"localhost"
+									],
+									"port": "44391",
+									"path": [
+										"api",
+										"user",
+										"insertCourseЕeacher"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Тест (Получение логина)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiQWxleGFuZHIiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJzdHVkZW50IiwibmJmIjoxNjUzMzg1MjkzLCJleHAiOjE2NTMzODUzNTMsImlzcyI6Ik15QXV0aFNlcnZlciIsImF1ZCI6Imh0dHA6Ly9sb2NhbGhvc3Q6MzAwMCJ9.PR94ls-q6HKTrxtzRxZC8T2LwhFEAro1Ul2ihT0-4KM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44391/api/values/getlogin",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44391",
+							"path": [
+								"api",
+								"values",
+								"getlogin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Данные клиента",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiTmlrYUxlbmluYSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6InRlYWNoZXIiLCJuYmYiOjE2NTQ5ODAyNjAsImV4cCI6MTY1NDk4MTE2MCwiaXNzIjoiTXlBdXRoU2VydmVyIiwiYXVkIjoiaHR0cDovL2xvY2FsaG9zdDozMDAwIn0.PGNx-aJDfnSZwMRgg0IlgQDuIpnCdbObc3a_DlV-A0g",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44391/api/user/getinfo",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44391",
+							"path": [
+								"api",
+								"user",
+								"getinfo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Получение курсов",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiQWxleGFuZHIiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJzdHVkZW50IiwibmJmIjoxNjU0OTM2ODkzLCJleHAiOjE2NTQ5Mzc3OTMsImlzcyI6Ik15QXV0aFNlcnZlciIsImF1ZCI6Imh0dHA6Ly9sb2NhbGhvc3Q6MzAwMCJ9.V7C0FNoJLGBRD2JXt-4SguGXTzExvQezWtudmvCeeVM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44391/api/user/getAllCourses",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44391",
+							"path": [
+								"api",
+								"user",
+								"getAllCourses"
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
+			]
 		},
 		{
-			"name": "https://localhost:44391/api/values/getrole",
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiQWxleGFuZHIiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJzdHVkZW50IiwibmJmIjoxNjUzMzg1MjkzLCJleHAiOjE2NTMzODUzNTMsImlzcyI6Ik15QXV0aFNlcnZlciIsImF1ZCI6Imh0dHA6Ly9sb2NhbGhvc3Q6MzAwMCJ9.PR94ls-q6HKTrxtzRxZC8T2LwhFEAro1Ul2ihT0-4KM",
-							"type": "string"
+			"name": "Не автроизированный",
+			"item": [
+				{
+					"name": "Регистрация",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"login\": \"NikaLenina\",\r\n  \"email\": \"nika@maill.ru\",\r\n  \"role\": \"teacher\",\r\n  \"password\": \"1111\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44391/register",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44391",
+							"path": [
+								"register"
+							]
 						}
-					]
+					},
+					"response": []
 				},
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "https://localhost:44391/api/values/getrole",
-					"protocol": "https",
-					"host": [
-						"localhost"
-					],
-					"port": "44391",
-					"path": [
-						"api",
-						"values",
-						"getrole"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "https://localhost:44391/api/user/getinfo",
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiQWxleGFuZHIiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJzdHVkZW50IiwibmJmIjoxNjUzNDA1NDgwLCJleHAiOjE2NTM0MDU1NDAsImlzcyI6Ik15QXV0aFNlcnZlciIsImF1ZCI6Imh0dHA6Ly9sb2NhbGhvc3Q6MzAwMCJ9.xcApD6NYKEcfua9UAfilH6CGyJoiCyUzWPKZKhEJsto",
-							"type": "string"
+				{
+					"name": "Авторизация",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"login\": \"NikaLenina\",\r\n  \"password\": \"1111\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44391/token",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44391",
+							"path": [
+								"token"
+							]
 						}
-					]
-				},
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "https://localhost:44391/api/user/getinfo",
-					"protocol": "https",
-					"host": [
-						"localhost"
-					],
-					"port": "44391",
-					"path": [
-						"api",
-						"user",
-						"getinfo"
-					]
+					},
+					"response": []
 				}
-			},
-			"response": []
+			]
 		}
 	]
 }
