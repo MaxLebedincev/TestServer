@@ -27,7 +27,6 @@ namespace Lab3
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
             string connection = Configuration.GetConnectionString("DefaultConnection");
@@ -36,68 +35,41 @@ namespace Lab3
 
             services.AddCors();
 
-            /*
-            options =>
-            {
-                options.AddDefaultPolicy(
-                builder =>
-                {
-                    builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
-                    //builder.WithOrigins("http://localhost:3000").AllowAnyMethod().AllowAnyHeader();
-                    //builder.WithOrigins("http://localhost:3000");
-                });
-            }
-            */
-
-            // установка конфигурации подключения
-            //services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
-            //    .AddCookie(options => //CookieAuthenticationOptions 
-            //    {
-            //        options.LoginPath = new Microsoft.AspNetCore.Http.PathString("/Account/Login");
-            //    });
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-                    .AddJwtBearer(options =>
+                .AddJwtBearer(options =>
+                {
+                    options.RequireHttpsMetadata = false; // Отвечает за https
+                    options.TokenValidationParameters = new TokenValidationParameters
                     {
-                        options.RequireHttpsMetadata = false; // Отвечает за https
-                        options.TokenValidationParameters = new TokenValidationParameters
-                        {
-                            // укзывает, будет ли валидироваться издатель при валидации токена
-                            ValidateIssuer = true,
-                            // строка, представляющая издателя
-                            ValidIssuer = AuthOptions.ISSUER,
+                        // укзывает, будет ли валидироваться издатель при валидации токена
+                        ValidateIssuer = true,
+                        // строка, представляющая издателя
+                        ValidIssuer = AuthOptions.ISSUER,
 
-                            // будет ли валидироваться потребитель токена
-                            ValidateAudience = true,
-                            // установка потребителя токена
-                            ValidAudience = AuthOptions.AUDIENCE,
-                            // будет ли валидироваться время существования
-                            ValidateLifetime = true,
+                        // будет ли валидироваться потребитель токена
+                        ValidateAudience = true,
+                        // установка потребителя токена
+                        ValidAudience = AuthOptions.AUDIENCE,
+                        // будет ли валидироваться время существования
+                        ValidateLifetime = true,
 
-                            // установка ключа безопасности
-                            IssuerSigningKey = AuthOptions.GetSymmetricSecurityKey(),
-                            // валидация ключа безопасности
-                            ValidateIssuerSigningKey = true,
-                        };
-                    });
+                        // установка ключа безопасности
+                        IssuerSigningKey = AuthOptions.GetSymmetricSecurityKey(),
+                        // валидация ключа безопасности
+                        ValidateIssuerSigningKey = true,
+                    };
+                });
             services.AddControllers();
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            //if (env.IsDevelopment())
-            //{
-            //    app.UseDeveloperExceptionPage();
-            //}
             app.UseDeveloperExceptionPage();
 
             app.UseHttpsRedirection();
 
             app.UseRouting();
 
-            //app.UseCors(
-            //    options => options.WithOrigins("http://localhost:3000").AllowAnyMethod().AllowAnyHeader().AllowCredentials()
-            //);
             app.UseCors(options => options
                 .WithOrigins(new[] { "http://localhost:3000"})
                 .AllowAnyHeader()
@@ -111,9 +83,6 @@ namespace Lab3
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapDefaultControllerRoute();
-                //endpoints.MapControllerRoute(
-                //    name: "default",
-                //    pattern: "{controller=Home}/{action=Index}/{id?}");
             });
         }
     }

@@ -13,9 +13,9 @@ namespace Lab3.Services
             db = context;
         }
 
-        public MainUsers Add(string login, string email, string role, string password)
+        public MainUsers Add(string login, string email, string role, string password, DateTime registerDate, DateTime updateDate)
         {
-            MainUsers user = new MainUsers { login = login, email = email, role = role, password = password };
+            MainUsers user = new MainUsers { login = login, email = email, role = role, password = password, registerDate = registerDate, updateDate = updateDate };
 
             db.MainUsers.Add(user);
             db.SaveChanges();

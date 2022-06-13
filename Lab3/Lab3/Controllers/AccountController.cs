@@ -3,8 +3,7 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
-//using Lab3.ViewModels; // пространство имен моделей RegisterModel и LoginModel
-using Lab3.Models; // пространство имен UserContext и класса User
+using Lab3.Models;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.IdentityModel.Tokens;
@@ -41,16 +40,19 @@ namespace Lab3.Controllers
 
             if ( new MainUsersServices(db).GetByUsers(data.login, data.email) == null)
             {
-                data.password = new Security.Security().GetHash(data.password);
 
-                new MainUsersServices(db).Add(data.login, data.email, data.role, data.password);
+                DateTime date = DateTime.Now;
+
+                data.password = new Security.Security().GetHash(date.ToString() + data.password + date.ToString());
+
+                new MainUsersServices(db).Add(data.login, data.email, data.role, data.password, date, date);
 
                 return new JsonResult(new {
                     success = "Пользователь зарегестрирован!" 
                 });
             }
             
-            return new JsonResult(new { errorText = "Почта или Логин уже занят." });
+            return new JsonResult(new { errorText = "Почта или Логин уже используются." });
         }
 
         [HttpPost("/token")]
@@ -59,7 +61,7 @@ namespace Lab3.Controllers
             var identity = GetIdentity(data.login, data.password);
             if (identity == null)
             {
-                return new JsonResult(new { errorText = "Invalid username or password." });
+                return new JsonResult(new { errorText = "Логин или пароль не подходят." });
             }
 
             var now = DateTime.UtcNow;
@@ -110,13 +112,15 @@ namespace Lab3.Controllers
         {
             if (string.IsNullOrEmpty(login) || string.IsNullOrEmpty(password)) return null;
 
-            MainUsers user = new MainUsersServices(db).CheckUser(login, new Security.Security().GetHash(password));
-            if (user != null)
+            MainUsers supposedUser = new MainUsersServices(db).GetByLogin(login);
+
+            MainUsers verifieduser = new MainUsersServices(db).CheckUser(login, new Security.Security().GetHash(supposedUser.registerDate.ToString() + password + supposedUser.updateDate.ToString()));
+            if (verifieduser != null)
             {
                 var claims = new List<Claim>
                 {
-                    new Claim(ClaimsIdentity.DefaultNameClaimType, user.login),
-                    new Claim(ClaimsIdentity.DefaultRoleClaimType, user.role)
+                    new Claim(ClaimsIdentity.DefaultNameClaimType, verifieduser.login),
+                    new Claim(ClaimsIdentity.DefaultRoleClaimType, verifieduser.role)
                 };
                 ClaimsIdentity claimsIdentity =
                 new ClaimsIdentity(claims, "Token", ClaimsIdentity.DefaultNameClaimType,

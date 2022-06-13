@@ -1,4 +1,6 @@
-﻿namespace Lab3.Models
+﻿using System;
+
+namespace Lab3.Models
 {
     public class MainUsers
     {
@@ -7,5 +9,7 @@
         public string email { get; set; }
         public string role { get; set; }
         public string password { get; set; }
+        public DateTime registerDate { get; set; }
+        public DateTime updateDate { get; set; }
     }
 }

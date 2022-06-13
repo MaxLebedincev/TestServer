@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Алг\\Lab3\\Lab3\\Lab3.csproj": {}
+    "C:\\Алг\\ds\\TestServer\\Lab3\\Lab3\\Lab3.csproj": {}
   },
   "projects": {
-    "C:\\Алг\\Lab3\\Lab3\\Lab3.csproj": {
+    "C:\\Алг\\ds\\TestServer\\Lab3\\Lab3\\Lab3.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Алг\\Lab3\\Lab3\\Lab3.csproj",
+        "projectUniqueName": "C:\\Алг\\ds\\TestServer\\Lab3\\Lab3\\Lab3.csproj",
         "projectName": "Lab3",
-        "projectPath": "C:\\Алг\\Lab3\\Lab3\\Lab3.csproj",
+        "projectPath": "C:\\Алг\\ds\\TestServer\\Lab3\\Lab3\\Lab3.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Алг\\Lab3\\Lab3\\obj\\",
+        "outputPath": "C:\\Алг\\ds\\TestServer\\Lab3\\Lab3\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
