@@ -9,36 +9,32 @@ using Dapper;
 using Microsoft.Extensions.Configuration;
 using System.Collections.Generic;
 using System;
+using Microsoft.AspNetCore.Http;
 
 namespace Lab3.Controllers
 {
     [ApiController]
+    [Authorize]
     [Route("api/[controller]")]
     public class UserController : Controller
     {
 
-        private SqlConnection _conn;
-        private ApplicationContext db;
-
-        public UserController(ApplicationContext context, IConfiguration  conf)
+        protected SqlConnection _conn;
+        protected ApplicationContext db;
+        protected MainUsers user;
+        
+        public UserController(ApplicationContext context, IConfiguration  conf, IHttpContextAccessor contextAccessor)
         {
             _conn = new SqlConnection(conf.GetConnectionString("DefaultConnection"));
             db = context;
             _conn.Open();
-        }
-
-        public class Course
-        {
-            public int id_course { get; set; }
-            public int id_student { get; set; }
+            user = new MainUsersServices(db).GetByLogin(contextAccessor.HttpContext.User.Identity.Name);
         }
 
         [Authorize]
         [Route("getinfo")]
         public JsonResult GetInfo()
         {
-            var user = new MainUsersServices(db).GetByLogin(User.Identity.Name);
-
             return new JsonResult(new {
                 id = user.id,
                 login = user.login,

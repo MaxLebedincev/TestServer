@@ -59,6 +59,9 @@ namespace Lab3
                         ValidateIssuerSigningKey = true,
                     };
                 });
+
+            services.AddHttpContextAccessor();
+            
             services.AddControllers();
         }
 
@@ -71,7 +74,7 @@ namespace Lab3
             app.UseRouting();
 
             app.UseCors(options => options
-                .WithOrigins(new[] { "http://localhost:3000"})
+                .WithOrigins(new[] { "http://localhost:3000", "http://localhost:8080" })
                 .AllowAnyHeader()
                 .AllowAnyMethod()
                 .AllowCredentials()

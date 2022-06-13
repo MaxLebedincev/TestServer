@@ -12,37 +12,6 @@
 					"name": "Админ",
 					"item": [
 						{
-							"name": "Тест (Получение роли)",
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiQWxleGFuZHIiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJzdHVkZW50IiwibmJmIjoxNjUzMzg1MjkzLCJleHAiOjE2NTMzODUzNTMsImlzcyI6Ik15QXV0aFNlcnZlciIsImF1ZCI6Imh0dHA6Ly9sb2NhbGhvc3Q6MzAwMCJ9.PR94ls-q6HKTrxtzRxZC8T2LwhFEAro1Ul2ihT0-4KM",
-											"type": "string"
-										}
-									]
-								},
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "https://localhost:44391/api/values/getrole",
-									"protocol": "https",
-									"host": [
-										"localhost"
-									],
-									"port": "44391",
-									"path": [
-										"api",
-										"values",
-										"getrole"
-									]
-								}
-							},
-							"response": []
-						},
-						{
 							"name": "Получение всех юзеров",
 							"request": {
 								"auth": {
@@ -197,6 +166,49 @@
 								}
 							},
 							"response": []
+						},
+						{
+							"name": "Мои курсы",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiS29yb1NlbnNlaSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6InRlYWNoZXIiLCJuYmYiOjE2NTUxMzAyMTksImV4cCI6MTY1NTEzMTExOSwiaXNzIjoiTXlBdXRoU2VydmVyIiwiYXVkIjoiaHR0cDovL2xvY2FsaG9zdDozMDAwIn0.pKsaWN82bdaBjBvETuFy26fMjMdH6nAMUqrG4tMxCG0",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://localhost:44391/api/teacher/getMyCourses",
+									"protocol": "https",
+									"host": [
+										"localhost"
+									],
+									"port": "44391",
+									"path": [
+										"api",
+										"teacher",
+										"getMyCourses"
+									]
+								}
+							},
+							"response": []
 						}
 					]
 				},
@@ -282,39 +294,51 @@
 								}
 							},
 							"response": []
+						},
+						{
+							"name": "Мои курсы",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiS29yb1NlbnNlaSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6InRlYWNoZXIiLCJuYmYiOjE2NTUxMzAyMTksImV4cCI6MTY1NTEzMTExOSwiaXNzIjoiTXlBdXRoU2VydmVyIiwiYXVkIjoiaHR0cDovL2xvY2FsaG9zdDozMDAwIn0.pKsaWN82bdaBjBvETuFy26fMjMdH6nAMUqrG4tMxCG0",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://localhost:44391/api/teacher/getMyCourses",
+									"protocol": "https",
+									"host": [
+										"localhost"
+									],
+									"port": "44391",
+									"path": [
+										"api",
+										"teacher",
+										"getMyCourses"
+									]
+								}
+							},
+							"response": []
 						}
 					]
-				},
-				{
-					"name": "Тест (Получение логина)",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiQWxleGFuZHIiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJzdHVkZW50IiwibmJmIjoxNjUzMzg1MjkzLCJleHAiOjE2NTMzODUzNTMsImlzcyI6Ik15QXV0aFNlcnZlciIsImF1ZCI6Imh0dHA6Ly9sb2NhbGhvc3Q6MzAwMCJ9.PR94ls-q6HKTrxtzRxZC8T2LwhFEAro1Ul2ihT0-4KM",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "https://localhost:44391/api/values/getlogin",
-							"protocol": "https",
-							"host": [
-								"localhost"
-							],
-							"port": "44391",
-							"path": [
-								"api",
-								"values",
-								"getlogin"
-							]
-						}
-					},
-					"response": []
 				},
 				{
 					"name": "Данные клиента",
@@ -348,7 +372,7 @@
 					"response": []
 				},
 				{
-					"name": "Получение курсов",
+					"name": "Все курсы",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},

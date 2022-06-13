@@ -2,6 +2,7 @@
 using Lab3.Data;
 using Lab3.Models;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using System;
@@ -12,17 +13,21 @@ namespace Lab3.Controllers.Entity
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class AdminController : Controller
+    public class AdminController : UserController
     {
-        private SqlConnection _conn;
-        private ApplicationContext db;
-
-        public AdminController(ApplicationContext context, IConfiguration conf)
+        public AdminController(ApplicationContext context, IConfiguration conf, IHttpContextAccessor contextAccessor) : base(context, conf, contextAccessor)
         {
-            _conn = new SqlConnection(conf.GetConnectionString("DefaultConnection"));
-            db = context;
-            _conn.Open();
         }
+
+        //private SqlConnection _conn;
+        //private ApplicationContext db;
+
+        //public AdminController(ApplicationContext context, IConfiguration conf)
+        //{
+        //    _conn = new SqlConnection(conf.GetConnectionString("DefaultConnection"));
+        //    db = context;
+        //    _conn.Open();
+        //}
 
         [Authorize(Roles = "admin")]
         [Route("getAllUser")]
