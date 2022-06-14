@@ -113,8 +113,11 @@ namespace Lab3.Controllers
             if (string.IsNullOrEmpty(login) || string.IsNullOrEmpty(password)) return null;
 
             MainUsers supposedUser = new MainUsersServices(db).GetByLogin(login);
+            MainUsers verifieduser = null;
 
-            MainUsers verifieduser = new MainUsersServices(db).CheckUser(login, new Security.Security().GetHash(supposedUser.registerDate.ToString() + password + supposedUser.updateDate.ToString()));
+            if (supposedUser != null)
+                 verifieduser = new MainUsersServices(db).CheckUser(login, new Security.Security().GetHash(supposedUser.registerDate.ToString() + password + supposedUser.updateDate.ToString()));
+            
             if (verifieduser != null)
             {
                 var claims = new List<Claim>
