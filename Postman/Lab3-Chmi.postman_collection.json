@@ -483,6 +483,40 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Выход",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44391/logout",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44391",
+							"path": [
+								"logout"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		}

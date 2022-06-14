@@ -96,7 +96,7 @@ namespace Lab3.Controllers
         }
 
         [HttpPost("/logout")]
-        public JsonResult Logout([FromBody] MainUsers data)
+        public JsonResult Logout()
         {
             Response.Cookies.Append("jwt", "", new CookieOptions()
             {
