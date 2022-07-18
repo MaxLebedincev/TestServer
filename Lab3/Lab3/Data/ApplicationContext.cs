@@ -1,8 +1,8 @@
-﻿using Lab3.Models;
+﻿using InTheShadowsAPI.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 
-namespace Lab3.Data
+namespace InTheShadowsAPI.Data
 {
     public class ApplicationContext: DbContext
     {

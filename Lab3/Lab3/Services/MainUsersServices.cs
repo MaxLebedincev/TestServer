@@ -1,9 +1,9 @@
-﻿using Lab3.Models;
-using Lab3.Data;
+﻿using InTheShadowsAPI.Models;
+using InTheShadowsAPI.Data;
 using System.Linq;
 using System;
 
-namespace Lab3.Services
+namespace InTheShadowsAPI.Services
 {
     public class MainUsersServices
     {

@@ -1,6 +1,6 @@
 ﻿using Dapper;
-using Lab3.Data;
-using Lab3.Models;
+using InTheShadowsAPI.Data;
+using InTheShadowsAPI.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -10,7 +10,7 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Threading.Tasks;
 
-namespace Lab3.Controllers.Entity
+namespace InTheShadowsAPI.Controllers.Entity
 {
     [ApiController]
     [Route("api/[controller]")]

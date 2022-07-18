@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
 
-namespace Lab3.Controllers.Test
+namespace InTheShadowsAPI.Controllers.Test
 {
     [ApiController]
     [Route("api/[controller]")]

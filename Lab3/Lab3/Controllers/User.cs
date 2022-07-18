@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
-using Lab3.Data;
-using Lab3.Models;
-using Lab3.Services;
+using InTheShadowsAPI.Data;
+using InTheShadowsAPI.Models;
+using InTheShadowsAPI.Services;
 using System.Data.SqlClient;
 using System.Threading.Tasks;
 using Dapper;
@@ -11,7 +11,7 @@ using System.Collections.Generic;
 using System;
 using Microsoft.AspNetCore.Http;
 
-namespace Lab3.Controllers
+namespace InTheShadowsAPI.Controllers
 {
     [ApiController]
     [Authorize]

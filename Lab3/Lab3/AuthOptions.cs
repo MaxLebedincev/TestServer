@@ -1,7 +1,7 @@
 ﻿using Microsoft.IdentityModel.Tokens;
 using System.Text;
 
-namespace Lab3
+namespace InTheShadowsAPI
 {
     public class AuthOptions
     {

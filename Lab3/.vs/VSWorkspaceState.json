@@ -3,10 +3,11 @@
     "",
     "\\Lab3",
     "\\Lab3\\Controllers",
+    "\\Lab3\\Controllers\\Entity",
     "\\Lab3\\Models",
     "\\Lab3\\Security",
     "\\Lab3\\Services"
   ],
-  "SelectedNode": "\\Lab3\\Controllers\\AccountController.cs",
+  "SelectedNode": "\\Lab3.sln",
   "PreviewInSolutionExplorer": false
 }

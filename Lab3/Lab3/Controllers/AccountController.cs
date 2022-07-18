@@ -3,23 +3,23 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
-using Lab3.Models;
+using InTheShadowsAPI.Models;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Data.SqlClient;
-using Lab3.Data;
+using InTheShadowsAPI.Data;
 using System;
 using System.Linq;
-using Lab3.Security;
+using InTheShadowsAPI.Security;
 using Newtonsoft.Json;
 using System.Security.Cryptography;
-using Lab3.Services;
+using InTheShadowsAPI.Services;
 using Microsoft.AspNetCore.Http;
 
-namespace Lab3.Controllers
+namespace InTheShadowsAPI.Controllers
 {
     public class AccountController : ControllerBase
     {

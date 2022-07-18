@@ -2,7 +2,7 @@
 using System.Text;
 using System.Security.Cryptography;
 
-namespace Lab3.Security
+namespace InTheShadowsAPI.Security
 {
     public class Security
     {

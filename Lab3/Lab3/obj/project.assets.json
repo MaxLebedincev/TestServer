@@ -5458,24 +5458,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\User\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\user\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Алг\\ds\\TestServer\\Lab3\\Lab3\\Lab3.csproj",
-      "projectName": "Lab3",
-      "projectPath": "C:\\Алг\\ds\\TestServer\\Lab3\\Lab3\\Lab3.csproj",
-      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Алг\\ds\\TestServer\\Lab3\\Lab3\\obj\\",
+      "projectUniqueName": "E:\\Проги (C#)\\2022\\TestServer\\Lab3\\Lab3\\InTheShadowsAPI.csproj",
+      "projectName": "InTheShadowsAPI",
+      "projectPath": "E:\\Проги (C#)\\2022\\TestServer\\Lab3\\Lab3\\InTheShadowsAPI.csproj",
+      "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
+      "outputPath": "E:\\Проги (C#)\\2022\\TestServer\\Lab3\\Lab3\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -5544,7 +5539,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
       }
     }
   }

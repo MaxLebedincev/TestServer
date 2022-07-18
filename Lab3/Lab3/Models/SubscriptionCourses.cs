@@ -1,4 +1,4 @@
-﻿namespace Lab3.Models
+﻿namespace InTheShadowsAPI.Models
 {
     public class SubscriptionCourses
     {
