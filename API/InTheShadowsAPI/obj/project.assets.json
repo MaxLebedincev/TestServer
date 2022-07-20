@@ -5463,11 +5463,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Проги (C#)\\2022\\TestServer\\Lab3\\Lab3\\InTheShadowsAPI.csproj",
+      "projectUniqueName": "E:\\Проги (C#)\\2022\\InTheShadows\\API\\InTheShadowsAPI\\InTheShadowsAPI.csproj",
       "projectName": "InTheShadowsAPI",
-      "projectPath": "E:\\Проги (C#)\\2022\\TestServer\\Lab3\\Lab3\\InTheShadowsAPI.csproj",
+      "projectPath": "E:\\Проги (C#)\\2022\\InTheShadows\\API\\InTheShadowsAPI\\InTheShadowsAPI.csproj",
       "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-      "outputPath": "E:\\Проги (C#)\\2022\\TestServer\\Lab3\\Lab3\\obj\\",
+      "outputPath": "E:\\Проги (C#)\\2022\\InTheShadows\\API\\InTheShadowsAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",

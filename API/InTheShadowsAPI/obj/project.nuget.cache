@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "idw4YYe3q0MRxSQ94bXiSM9GF8qMnsKalC1syZLQ58V0ho0b71zB9OK14GpFE9Z6ZEJNEv9qhwSesIpEZccnMw==",
+  "dgSpecHash": "mdF4VVZtfVFzMjg70IKnU5InVyTplIZeXwcbA+y6kmAAuj6hkLwoARFCS42e+cVwOVvlfOlrnsMivJkkObnk8w==",
   "success": true,
-  "projectFilePath": "E:\\Проги (C#)\\2022\\TestServer\\Lab3\\Lab3\\InTheShadowsAPI.csproj",
+  "projectFilePath": "E:\\Проги (C#)\\2022\\InTheShadows\\API\\InTheShadowsAPI\\InTheShadowsAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\user\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\3.1.25\\microsoft.aspnetcore.authentication.jwtbearer.3.1.25.nupkg.sha512",
